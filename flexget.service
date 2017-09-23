@@ -1,0 +1,16 @@
+[Unit]
+Description=Flexget Daemon
+After=network.target
+
+[Service]
+Type=simple
+User=username
+Group=username
+UMask=007
+WorkingDirectroy=/home/username/.config/flexget
+ExecStart=/usr/local/bin/flexget daemon start
+ExecStop=/usr/local/bin/flexget daemon stop
+ExecReload=/usr/local/bin/flexget daemon reload
+
+[Install]
+WantedBy=multi-user.target
