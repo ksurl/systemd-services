@@ -1,6 +1,7 @@
 [Unit]
 Description=Flexget Daemon
-After=network.target
+After=network.target sys-devices-virtual-net-tun0.device
+Wants=sys-devices-virtual-net-tun0.device
 
 [Service]
 Type=simple

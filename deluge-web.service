@@ -1,6 +1,7 @@
 [Unit]
 Description=Deluge Bittorrent Client Web Interface
-After=network-online.target
+After=network-online.target sys-devices-virtual-net-tun0.device
+Wants=sys-devices-virtual-net-tun0.device
 
 [Service]
 Type=simple
