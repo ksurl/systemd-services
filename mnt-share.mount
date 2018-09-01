@@ -7,7 +7,7 @@ Wants=network-online.target
 [Mount]
 What=//server/share
 Where=/mnt/sharename
-Options=uid=username,gid=username,credentials=/home/username/.smbcred,iocharset=utf8,rw,x-systemd.automount
+Options=uid=username,gid=username,credentials=/home/username/.smbcred,iocharset=utf8,rw,x-systemd.automount,vers=3.0
 Type=cifs
 TimeoutSec=30
 
