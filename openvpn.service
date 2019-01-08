@@ -1,0 +1,13 @@
+[Unit]
+Description=OpenVPN client
+After=network-online.target
+
+[Service]
+ExecStart=/usr/sbin/openvpn --config /home/username/.config/openvpn/config.ovpn
+Restart=on-failure
+RestartSec=3
+DeviceAllow=/dev/null rw
+DeviceAllow=/dev/net/tun rw
+
+[Install]
+WantedBy=multi-user.target
