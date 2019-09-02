@@ -1,7 +1,6 @@
 [Unit]
 Description=Automount sharename
 Requires=network-online.target
-After=network-online.service
 
 [Automount]
 Where=/mnt/sharename
