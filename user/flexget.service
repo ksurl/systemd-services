@@ -1,0 +1,14 @@
+[Unit]
+Description=Flexget Daemon
+After=network.target
+
+[Service]
+WorkingDirectory=/home/username/.config/flexget
+ExecStart=/home/user/.venv/flexget/bin/flexget daemon start --autoreload-config
+ExecStop=/home/user/.venv/flexget/bin/flexget daemon stop
+ExecReload=/home/user/.venv/flexget/bin/flexget daemon reload-config
+Restart=on-failure
+TimeoutStopSec=300
+
+[Install]
+WantedBy=default.target

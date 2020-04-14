@@ -1,0 +1,15 @@
+[Unit]
+Description=minidlna daemon
+After=network.target
+
+[Service]
+Type=simple
+User=username
+Group=username
+UMask=007
+WorkingDirectory=/home/username/.config/minidlna
+ExecStart=/usr/local/sbin/minidlnad -S -f /home/username/.config/minidlna/minidlna.conf -P /home/username/.config/minidlna/minidlna.pid
+#ProtectHome=read-only
+
+[Install]
+WantedBy=multi-user.target

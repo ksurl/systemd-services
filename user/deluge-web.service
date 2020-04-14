@@ -1,0 +1,12 @@
+[Unit]
+Description=Deluge Bittorrent Client Web Interface
+Documentation=man:deluge-web
+After=network-online.target deluged.service
+Wants=deluged.service
+
+[Service]
+ExecStart=/usr/bin/deluge-web -d -L info -l /home/username/.config/deluge/deluge-web.log
+Restart=on-failure
+
+[Install]
+WantedBy=default.target
