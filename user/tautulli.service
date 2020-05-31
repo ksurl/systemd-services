@@ -1,0 +1,14 @@
+[Unit]
+Description=Tautulli
+After=network-online.target plexmediaserver.service
+Wants=plexmediaserver.service
+
+[Service]
+ExecStart=/home/USER/.local/tautulli/bin/python3 /home/USER/.local/tautulli/Tautulli.py --config /home/USER/.config/tautulli/config.ini --datadir /home/USER/.config/tautulli --quiet --daemon --nolaunch
+Restart=on-abnormal
+RestartSec=5
+StartLimitInterval=90
+StartLimitBurst=3
+
+[Install]
+WantedBy=default.target
